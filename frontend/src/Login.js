@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Login({ toggleForm }) {
+  const [userType, setUserType] = useState('normal');
+
+  const handleUserTypeChange = (event) => {
+    setUserType(event.target.value);
+  };
+
   return (
     <div>
       <h2>Login</h2>
@@ -12,6 +18,13 @@ function Login({ toggleForm }) {
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input type="password" id="password" name="password" required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="user-type">User Type</label>
+          <select id="user-type" name="userType" value={userType} onChange={handleUserTypeChange}>
+            <option value="normal">Normal User</option>
+            <option value="service-provider">Service Provider</option>
+          </select>
         </div>
         <button type="submit">Login</button>
       </form>
