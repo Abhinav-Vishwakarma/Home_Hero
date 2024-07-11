@@ -6,7 +6,7 @@ For database:---
     4.click connect(you will be connect to cloud database)
 
 for running the app:---
-  1.clone the repo
+1.clone the repo
 2.change the directory to frontend
 3.run command: npm install
 4.run command: npm start  (to start the react app)
