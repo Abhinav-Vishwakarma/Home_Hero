@@ -1,1 +1,13 @@
 
+For database:---
+    1.Install MongoDB compass and mongodb shell
+    2.Open Compass;
+    3.in url section paste this: mongodb+srv://Home_Hero:2023B1531060@cluster0.jhyr7gj.mongodb.net/
+    4.click connect(you will be connect to cloud database)
+
+for running the app:---
+  1.clone the repo
+2.change the directory to frontend
+3.run command: npm install
+4.run command: npm start  (to start the react app)
+
