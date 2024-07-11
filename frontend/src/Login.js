@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({ toggleForm }) {
   const [userType, setUserType] = useState('normal');
+  const navigate = useNavigate();
 
   const handleUserTypeChange = (event) => {
     setUserType(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Add authentication logic here
+    navigate('/home');
+  };
+
   return (
     <div>
       <h2>Login</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username</label>
           <input type="text" id="username" name="username" required />
@@ -29,7 +37,7 @@ function Login() {
         <button type="submit">Login</button>
       </form>
       <div className="toggle">
-        <p>Don't have an account? <Link to="/Register">Register here</Link></p>
+        <p>Don't have an account? <a href="#" onClick={toggleForm}>Register here</a></p>
       </div>
     </div>
   );
