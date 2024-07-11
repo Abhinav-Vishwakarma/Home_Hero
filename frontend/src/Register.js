@@ -10,7 +10,7 @@ function Register({ toggleForm }) {
   return (
     <div>
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="form-group">
           <label htmlFor="username">Username</label>
           <input type="text" id="username" name="username" required />
