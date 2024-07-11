@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Login({ toggleForm }) {
+function Login() {
   const [userType, setUserType] = useState('normal');
 
   const handleUserTypeChange = (event) => {
@@ -29,7 +30,7 @@ function Login({ toggleForm }) {
         <button type="submit">Login</button>
       </form>
       <div className="toggle">
-        <p>Don't have an account? <a href="#" onClick={toggleForm}>Register here</a></p>
+        <p>Don't have an account? <Link to="/Register">Register here</Link></p>
       </div>
     </div>
   );

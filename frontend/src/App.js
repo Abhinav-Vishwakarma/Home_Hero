@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import './App.css';
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
-
-  const toggleForm = () => {
-    setIsLogin(!isLogin);
-  };
-
   return (
-    <div className="container">
-      {isLogin ? <Login toggleForm={toggleForm} /> : <Register toggleForm={toggleForm} />}
-    </div>
+    <Router>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
