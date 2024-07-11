@@ -1,10 +1,22 @@
 import React from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+import Services from './Services';
+import Profile from './Profile';
 
 function Home() {
   return (
     <div>
-      <h2>Welcome to the Home Page</h2>
-      <p>You have successfully logged in or registered.</p>
+      <nav>
+        <ul>
+          <li><Link to="/home/services">Services</Link></li>
+          <li><Link to="/home/profile">Profile</Link></li>
+          <li><Link to="/home/profile">Home</Link></li>        </ul>
+      </nav>
+      <Routes>
+        <Route path="services" element={<Services />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="profile" element={<Profile />} />
+      </Routes>
     </div>
   );
 }
