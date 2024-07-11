@@ -9,7 +9,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={isLogin ? <Login toggleForm={toggleForm} /> : <Register toggleForm={toggleForm} />} />
-          <Route path="/home/*" element={<Home />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
     </Router>

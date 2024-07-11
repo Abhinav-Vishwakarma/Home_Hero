@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import Services from './Services';
-import Profile from './Profile';
 
 function Home() {
   return (
