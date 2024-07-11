@@ -6,9 +6,14 @@ import './App.css';
 
 function App() {
   return (
-    <div className="container">
-      {isLogin ? <Login toggleForm={toggleForm} /> : <Register toggleForm={toggleForm} />}
-    </div>
+    <Router>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={isLogin ? <Login toggleForm={toggleForm} /> : <Register toggleForm={toggleForm} />} />
+          <Route path="/home/*" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
