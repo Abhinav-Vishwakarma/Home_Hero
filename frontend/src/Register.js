@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Register({ toggleForm }) {
   const [userType, setUserType] = useState('normal');
+  const navigate = useNavigate();
 
   const handleUserTypeChange = (event) => {
     setUserType(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Add registration logic here
+    navigate('/home');
+  };
+
   return (
     <div>
       <h2>Register</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="new-username">Username</label>
           <input type="text" id="new-username" name="username" required />

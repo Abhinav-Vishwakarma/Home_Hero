@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
+import Home from './Home';
 import './App.css';
 
 function App() {
@@ -11,9 +13,14 @@ function App() {
   };
 
   return (
-    <div className="container">
-      {isLogin ? <Login toggleForm={toggleForm} /> : <Register toggleForm={toggleForm} />}
-    </div>
+    <Router>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={isLogin ? <Login toggleForm={toggleForm} /> : <Register toggleForm={toggleForm} />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
