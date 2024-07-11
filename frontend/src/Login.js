@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-function Login({ toggleForm }) {
+function Login() {
   const [userType, setUserType] = useState('normal');
   const navigate = useNavigate();
 
@@ -37,7 +36,7 @@ function Login({ toggleForm }) {
         <button type="submit">Login</button>
       </form>
       <div className="toggle">
-        <p>Don't have an account? <a href="#" onClick={toggleForm}>Register here</a></p>
+        <p>Don't have an account? <Link to="/Register">Register here</Link></p>
       </div>
     </div>
   );
