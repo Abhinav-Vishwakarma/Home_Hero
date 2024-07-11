@@ -11,3 +11,12 @@ for running the app:---
 3.run command: npm install
 4.run command: npm start  (to start the react app)
 
+how to push files: make sure to change the directory to frontend the follow further step
+1.run (git add .)
+2.run (git commit -m"your message")
+3.run (git push origin main)
+
+note: if i have updated any file teh you won't be able to push the files, so if such error
+occurs, then you have to pull the repo:
+
+  run (git pull) 
